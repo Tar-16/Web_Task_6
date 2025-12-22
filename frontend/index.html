@@ -1,0 +1,108 @@
+<!-- KNS ICE CREAMS Frontend -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KNS ICE CREAMS | Premium Ice Cream & Desserts</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <h1>KNS ICE CREAMS</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Scoops of Happiness</h2>
+    <p>Experience the finest handcrafted ice creams, sundaes, and desserts.</p>
+    <button onclick="scrollToMenu()">Order Now</button>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <h2>Our Premium Menu</h2>
+    <!-- Menu content will be injected by JavaScript -->
+    <div id="menu-container"></div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+      <p>
+        KNS Ice Creams is a premium destination for ice cream lovers. We pride ourselves on using the finest ingredients
+        to create
+        rich, creamy, and delightful flavors. From classic scoops to exotic sundaes and freshly baked cake desserts,
+        we promise a taste of luxury in every bite.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact & Locations</h2>
+    <p>Visit us for a treat or reach out for bulk orders.</p>
+    <div style="margin-top: 20px;">
+      <p><strong>Email:</strong> order@knsicecreams.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 KNS ICE CREAMS. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Floating Cart Button -->
+  <button id="cart-btn" onclick="openCartModal()">
+    Cart (<span id="cart-count">0</span>)
+  </button>
+
+  <!-- Order Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCartModal()">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cart-items" class="cart-items-list">
+        <!-- Cart items will be injected here -->
+        <p>Your cart is empty.</p>
+      </div>
+      <div style="text-align: right; font-weight: bold; margin-bottom: 20px;">
+        Total Items: <span id="total-count">0</span>
+      </div>
+
+      <h3>Complete Your Order</h3>
+      <form id="order-form" class="order-form" onsubmit="handleOrderSubmission(event)">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+        <textarea id="address" placeholder="Delivery Address" rows="3" required></textarea>
+        <button type="submit" class="submit-btn" id="place-order-btn">Place Order & Download Receipt</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal (Simple Alert for now or handled in JS) -->
+
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/order.js"></script>
+</body>
+
+</html>

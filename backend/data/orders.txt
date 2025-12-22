@@ -1,0 +1,18 @@
+
+------------------------
+Name: r
+Phone: 3
+Address: 1
+Items: Butterscotch, Butterscotch
+Date: 12/22/2025, 9:48:27 PM
+------------------------
+
+
+------------------------
+Name: Ajji 2
+Phone: 2831203
+Address: Ajji 2 house
+Items: Vanilla x 5
+Date: 12/22/2025, 10:35:20 PM
+------------------------
+
