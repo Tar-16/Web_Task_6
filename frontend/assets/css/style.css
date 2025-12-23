@@ -197,12 +197,21 @@ button {
 
 .menu-item h4 {
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: var(--text-color);
   min-height: 3rem; /* Align titles */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Price Display */
+.item-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-family: var(--font-heading);
 }
 
 /* Quantity Selector in Card */
@@ -331,7 +340,7 @@ button {
 .cart-items-list {
   list-style: none;
   margin: 0 0 30px 0;
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
 }
 
@@ -344,17 +353,77 @@ button {
   font-size: 1rem;
 }
 
-.cart-item span:first-child {
-  font-weight: bold;
-  color: #333;
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.cart-item-qty {
+.cart-item-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
+.cart-item-price {
   color: #777;
   font-size: 0.9rem;
-  background: #f9f9f9;
-  padding: 4px 10px;
-  border-radius: 20px;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-item-total {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.remove-btn {
+  cursor: pointer;
+  color: #ccc;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.remove-btn:hover {
+  color: #e74c3c;
+}
+
+/* Cart Total Summary */
+.cart-total {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.cart-grand-total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.cart-grand-total span:last-child {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
 }
 
 /* Form Styles */
@@ -429,5 +498,21 @@ footer p {
   
   .menu-grid {
     grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    padding: 30px 20px;
+    margin: 10% auto;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cart-item-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 }

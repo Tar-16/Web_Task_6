@@ -8,7 +8,7 @@ const router = express.Router();
 const ordersFilePath = path.join(__dirname, "../data/orders.txt");
 
 router.post("/place-order", (req, res) => {
-  const { name, phone, address, items } = req.body;
+  const { name, phone, address, items, totalAmount } = req.body;
 
   if (!name || !phone || !address || !items || items.length === 0) {
     return res.status(400).json({ message: "Invalid order data" });
@@ -20,6 +20,7 @@ Name: ${name}
 Phone: ${phone}
 Address: ${address}
 Items: ${items.join(", ")}
+Total Amount: ₹${totalAmount || 0}
 Date: ${new Date().toLocaleString()}
 ------------------------
 

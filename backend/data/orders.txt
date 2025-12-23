@@ -25,3 +25,21 @@ Items: Papaya x 3, Guava x 3
 Date: 12/23/2025, 10:34:23 AM
 ------------------------
 
+
+------------------------
+Name: KNS
+Phone: 70226969669
+Address: Shradha brindhavan
+Items: Cookie Dough Overload x 9, Apple Crumble x 2, Banana x 2, Watermelon x 1, Pineapple x 1
+Date: 12/23/2025, 4:23:53 PM
+------------------------
+
+
+------------------------
+Name: sasy
+Phone: 2323
+Address: ad
+Items: Cookie Dough Overload x 1 (₹240), Apple Crumble x 2 (₹440)
+Date: 12/23/2025, 4:37:31 PM
+------------------------
+

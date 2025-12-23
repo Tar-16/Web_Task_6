@@ -7,13 +7,16 @@ async function handleOrderSubmission(event) {
     return;
   }
 
+  // Calculate total amount
+  const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
   const orderData = {
     name: document.getElementById("name").value,
     phone: document.getElementById("phone").value,
     address: document.getElementById("address").value,
-    address: document.getElementById("address").value,
-    // Format items as strings for backend compatibility (it uses .join(", "))
-    items: cart.map(item => `${item.name} x ${item.quantity}`)
+    // Format items as strings with prices for backend compatibility
+    items: cart.map(item => `${item.name} x ${item.quantity} (₹${item.price * item.quantity})`),
+    totalAmount: totalAmount
   };
 
   try {
@@ -26,7 +29,7 @@ async function handleOrderSubmission(event) {
     });
 
     if (response.ok) {
-      alert("Order placed successfully!");
+      alert(`Order placed successfully! Total: ₹${totalAmount}`);
       cart = [];
       updateCartCount();
       closeCartModal();
