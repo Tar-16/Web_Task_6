@@ -57,13 +57,21 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2>Contact & Locations</h2>
-    <p>Visit us for a treat or reach out for bulk orders.</p>
-    <div style="margin-top: 20px;">
-      <p><strong>Email:</strong> order@knsicecreams.com</p>
-      <p><strong>Phone:</strong> +91 98765 43210</p>
-    </div>
-  </section>
+  <h2>Contact Us</h2>
+
+  <form id="contact-form" onsubmit="validateContact(event)">
+    <input type="text" id="contact-name" placeholder="Your Name" required />
+
+    <input type="email" id="contact-email" placeholder="Your Email" required />
+
+    <textarea id="contact-msg" placeholder="Message" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <p id="contact-error" style="color:red;"></p>
+</section>
+
 
   <!-- Footer -->
   <footer>

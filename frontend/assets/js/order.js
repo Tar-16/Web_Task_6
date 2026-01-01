@@ -41,3 +41,27 @@ async function handleOrderSubmission(event) {
     alert("Server not running.");
   }
 }
+function validateContact(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("contact-name").value.trim();
+  const email = document.getElementById("contact-email").value.trim();
+  const msg = document.getElementById("contact-msg").value.trim();
+  const error = document.getElementById("contact-error");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!name || !email || !msg) {
+    error.textContent = "All fields are required";
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    error.textContent = "Enter a valid email address";
+    return;
+  }
+
+  error.textContent = "";
+  alert("Message sent successfully!");
+  e.target.reset();
+}
