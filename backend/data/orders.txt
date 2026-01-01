@@ -43,3 +43,23 @@ Items: Cookie Dough Overload x 1 (₹240), Apple Crumble x 2 (₹440)
 Date: 12/23/2025, 4:37:31 PM
 ------------------------
 
+
+------------------------
+Name: Tarun
+Phone: 9632887538
+Address: home
+Items: Apple Crumble x 11 (₹2420)
+Total Amount: ₹2420
+Date: 1/1/2026, 10:18:28 AM
+------------------------
+
+
+------------------------
+Name: Tarun
+Phone: awa
+Address: aa
+Items: Apple Crumble x 5 (₹1100)
+Total Amount: ₹1100
+Date: 1/1/2026, 10:19:18 AM
+------------------------
+

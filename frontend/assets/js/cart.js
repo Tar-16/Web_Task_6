@@ -1,34 +1,36 @@
 // Cart modal & cart management
-let cart = []; // Stores objects: { name: "Item Name", price: 100, quantity: 1 }
+let cart = []; // { name, price, quantity }
 
-// Modified to support price
+// Add to cart
 function addToCart(item, price, quantity = 1) {
-  // Check if item already exists
-  const existingItemIndex = cart.findIndex(cartItem => cartItem.name === item);
+  const existingItemIndex = cart.findIndex(
+    cartItem => cartItem.name === item
+  );
 
   if (existingItemIndex > -1) {
     cart[existingItemIndex].quantity += quantity;
   } else {
-    cart.push({ name: item, price: price, quantity: quantity });
+    cart.push({ name: item, price, quantity });
   }
 
   updateCartCount();
 }
 
+// Update cart badge count
 function updateCartCount() {
   const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   document.getElementById("cart-count").innerText = totalCount;
-  
-  // Update total count in modal if exists
-  const totalCountEl = document.getElementById("total-count");
-  if (totalCountEl) totalCountEl.innerText = totalCount;
 }
 
+// Calculate raw total
 function calculateCartTotal() {
-  return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  return cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 }
 
-// existing hook: openCartModal
+// Open cart modal
 function openCartModal() {
   const modal = document.getElementById("cart-modal");
   const cartItemsDiv = document.getElementById("cart-items");
@@ -37,76 +39,68 @@ function openCartModal() {
 
   if (cart.length === 0) {
     cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
-  } else {
-    const ul = document.createElement("ul");
-    ul.className = "cart-list";
+    modal.style.display = "block";
+    return;
+  }
 
-    cart.forEach((cartItem, index) => {
-      const li = document.createElement("li");
-      li.className = "cart-item";
+  const ul = document.createElement("ul");
+  ul.className = "cart-list";
 
-      const itemTotal = cartItem.price * cartItem.quantity;
+  cart.forEach((cartItem, index) => {
+    const itemTotal = cartItem.price * cartItem.quantity;
 
-      li.innerHTML = `
-        <div class="cart-item-info">
-            <span class="cart-item-name">${cartItem.name}</span>
-            <span class="cart-item-price">₹${cartItem.price} × ${cartItem.quantity}</span>
-        </div>
-        <div class="cart-item-actions">
-            <span class="cart-item-total">₹${itemTotal}</span>
-            <span class="remove-btn" onclick="removeItem(${index})" title="Remove item">&times;</span>
-        </div>
-      `;
-      ul.appendChild(li);
-    });
-    cartItemsDiv.appendChild(ul);
-
-    // Add total amount display
-    const totalDiv = document.createElement("div");
-    totalDiv.className = "cart-total";
-    totalDiv.innerHTML = `
-      <div class="cart-summary">
-        <span>Total Items:</span>
-        <span>${cart.reduce((sum, item) => sum + item.quantity, 0)}</span>
+    const li = document.createElement("li");
+    li.className = "cart-item";
+    li.innerHTML = `
+      <div class="cart-item-info">
+        <span class="cart-item-name">${cartItem.name}</span>
+        <span class="cart-item-price">₹${cartItem.price} × ${cartItem.quantity}</span>
       </div>
-      <div class="cart-summary cart-grand-total">
-        <span>Total Amount:</span>
-        <span>₹${calculateCartTotal()}</span>
+      <div class="cart-item-actions">
+        <span class="cart-item-total">₹${itemTotal}</span>
+        <span class="remove-btn" onclick="removeItem(${index})">&times;</span>
       </div>
     `;
-    cartItemsDiv.appendChild(totalDiv);
-  }
+    ul.appendChild(li);
+  });
+
+  cartItemsDiv.appendChild(ul);
+
+  // ---- TOTAL + DISCOUNT LOGIC ----
+  const total = calculateCartTotal();
+  const discount = total > 1000 ? total * 0.10 : 0;
+  const payable = total - discount;
+
+  const summaryDiv = document.createElement("div");
+  summaryDiv.className = "cart-total";
+  summaryDiv.innerHTML = `
+    <div class="cart-summary">
+      <span>Total Amount:</span>
+      <span>₹${total.toFixed(2)}</span>
+    </div>
+    <div class="cart-summary">
+      <span>Discount (10% over ₹1000):</span>
+      <span>₹${discount.toFixed(2)}</span>
+    </div>
+    <div class="cart-summary cart-grand-total">
+      <strong>Payable:</strong>
+      <strong>₹${payable.toFixed(2)}</strong>
+    </div>
+  `;
+
+  cartItemsDiv.appendChild(summaryDiv);
 
   modal.style.display = "block";
 }
 
-// Helper to remove item
+// Remove item
 function removeItem(index) {
   cart.splice(index, 1);
   updateCartCount();
-  openCartModal(); // Refresh modal
+  openCartModal();
 }
 
-// existing hook: closeCartModal
+// Close modal
 function closeCartModal() {
   document.getElementById("cart-modal").style.display = "none";
-}
-function calculateTotal() {
-  let total = 0;
-
-  cart.forEach(item => {
-    total += item.price * item.qty;
-  });
-
-  let discount = 0;
-  if (total > 1000) {
-    discount = total * 0.10;
-  }
-
-  const finalTotal = total - discount;
-
-  document.getElementById("total-count").innerText = cart.length;
-  document.getElementById("cart-total").innerText = `₹${finalTotal.toFixed(2)}`;
-
-  return { total, discount, finalTotal };
 }
