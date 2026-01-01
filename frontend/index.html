@@ -89,12 +89,18 @@
       <span class="close" onclick="closeCartModal()">&times;</span>
       <h3>Your Cart</h3>
       <div id="cart-items" class="cart-items-list">
-        <!-- Cart items will be injected here -->
+        <!-- Cart items will be injected here CHANGES MADE HERE-->
         <p>Your cart is empty.</p>
       </div>
-      <div style="text-align: right; font-weight: bold; margin-bottom: 20px;">
-        Total Items: <span id="total-count">0</span>
-      </div>
+      
+      <div style="text-align: right; margin-bottom: 20px;">
+  <p>Total: ₹<span id="total-count">0</span></p>
+  <p>Discount (10% over ₹1000): ₹<span id="discount">0</span></p>
+  <p style="font-weight: bold;">
+    Payable Amount: ₹<span id="payable">0</span>
+  </p>
+</div>
+
 
       <h3>Complete Your Order</h3>
       <form id="order-form" class="order-form" onsubmit="handleOrderSubmission(event)">

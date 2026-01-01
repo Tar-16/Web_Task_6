@@ -91,3 +91,22 @@ function removeItem(index) {
 function closeCartModal() {
   document.getElementById("cart-modal").style.display = "none";
 }
+function calculateTotal() {
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price * item.qty;
+  });
+
+  let discount = 0;
+  if (total > 1000) {
+    discount = total * 0.10;
+  }
+
+  const finalTotal = total - discount;
+
+  document.getElementById("total-count").innerText = cart.length;
+  document.getElementById("cart-total").innerText = `₹${finalTotal.toFixed(2)}`;
+
+  return { total, discount, finalTotal };
+}
