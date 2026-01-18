@@ -3,7 +3,7 @@ const menuData = [
   {
     category: "Cone Ice Creams",
     items: [
-      { name: "Vanilla", price: 80, image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop" },
+      { name: "Vanilla", price: 80, image: "https://www.shutterstock.com/search/cone-ice-cream?dd_referrer=https%3A%2F%2Fwww.google.com%2F" },
       { name: "Chocolate", price: 80, image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" },
       { name: "Butterscotch", price: 90, image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop" },
       { name: "Cotton Candy", price: 100, image: "https://images.unsplash.com/photo-1626717129960-1a09dff05df3?w=400&h=300&fit=crop" }
@@ -19,9 +19,9 @@ const menuData = [
   {
     category: "Ice Cream Sundaes",
     items: [
-      { name: "Hot Chocolate Fudge", price: 180, image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=300&fit=crop" },
+      { name: "Hot Chocolate Fudge", price: 180, image: "https://images.unsplashcom/photo-1563379091339-03b21ab4a4f8?wp" },
       { name: "Banana Split", price: 200, image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" },
-      { name: "Choc-A-Mocha", price: 190, image: "https://images.unsplash.com/photo-1570197571499-166b36435e9f?w=400&h=300&fit=crop" },
+      { name: "Choc-A-Mocha", price: 190, image: "https://images.unsplash.com/phot1570197571499-166b36435e9f?w=400&h=300&fit=crop" },
       { name: "KNS Special (Fresh Nuts)", price: 250, image: "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=300&fit=crop" }
     ]
   },

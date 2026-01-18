@@ -63,3 +63,13 @@ Total Amount: ₹1100
 Date: 1/1/2026, 10:19:18 AM
 ------------------------
 
+
+------------------------
+Name: Tarun
+Phone: 9632887538
+Address: ABc
+Items: Chocolate x 27 (₹2160), Vanilla x 30 (₹2400)
+Total Amount: ₹4560
+Date: 1/1/2026, 11:11:22 AM
+------------------------
+
