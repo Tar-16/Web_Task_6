@@ -3,28 +3,28 @@ const menuData = [
   {
     category: "Cone Ice Creams",
     items: [
-      { name: "Vanilla", price: 80, image: "https://www.shutterstock.com/search/cone-ice-cream?dd_referrer=https%3A%2F%2Fwww.google.com%2F" },
-      { name: "Chocolate", price: 80, image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" },
-      { name: "Butterscotch", price: 90, image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop" },
-      { name: "Cotton Candy", price: 100, image: "https://images.unsplash.com/photo-1626717129960-1a09dff05df3?w=400&h=300&fit=crop" }
+      { name: "Vanilla", price: 80, image: "assets/images/cone_vanilla.png" },
+      { name: "Chocolate", price: 80, image: "assets/images/cone_chocolate.jpeg" },
+      { name: "Butterscotch", price: 90, image: "assets/images/cone_butterscotch.jpg" },
+      { name: "Cotton Candy", price: 100, image: "assets/images/cone_cotton_candy.jpeg" }
     ]
   },
   {
     category: "Tub Ice Creams",
     items: [
-      { name: "Vanilla Chocolate", price: 150, image: "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=400&h=300&fit=crop" },
-      { name: "Butterscotch", price: 160, image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=300&fit=crop" }
+      { name: "Vanilla Chocolate", price: 150, image: "assets/images/tub_vanilla_chocolate.jpeg" },
+      { name: "Butterscotch", price: 160, image: "assets/images/tub_butterscotch.jpeg" }
     ]
   },
   {
     category: "Ice Cream Sundaes",
     items: [
-      { name: "Hot Chocolate Fudge", price: 180, image: "https://images.unsplashcom/photo-1563379091339-03b21ab4a4f8?wp" },
-      { name: "Banana Split", price: 200, image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" },
-      { name: "Choc-A-Mocha", price: 190, image: "https://images.unsplash.com/phot1570197571499-166b36435e9f?w=400&h=300&fit=crop" },
+      { name: "Hot Chocolate Fudge", price: 180, image: "assets/images/sundae_hot_chocolate_fudge.jpg" },
+      { name: "Banana Split", price: 200, image: "assets/images/sundae_banana_split.jpeg" },
+      { name: "Choc-A-Mocha", price: 190, image: "assets/images/sundae_choc_a_mocha.jpeg" },
       { name: "KNS Special (Fresh Nuts)", price: 250, image: "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=400&h=300&fit=crop" }
     ]
-  },
+  }/*
   {
     category: "Cake Desserts",
     items: [
@@ -45,7 +45,7 @@ const menuData = [
       { name: "Papaya", price: 115, image: "https://images.unsplash.com/photo-1617112848923-cc2234396a8d?w=400&h=300&fit=crop" },
       { name: "Pineapple", price: 135, image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400&h=300&fit=crop" }
     ]
-  }
+  }*/
 ];
 
 const menuContainer = document.getElementById("menu-container");
